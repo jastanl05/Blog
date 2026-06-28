@@ -357,29 +357,56 @@ a { color: inherit; text-decoration: none; }
 
 /* ── TICKER ── */
 .ticker {
-  background: var(--gold);
-  padding: 12px 0;
+  background: var(--navy-dark);
+  border-top: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+  padding: 10px 0;
   overflow: hidden;
   white-space: nowrap;
 }
 .ticker__track {
   display: inline-flex;
-  animation: ticker 28s linear infinite;
+  align-items: center;
+  animation: ticker 40s linear infinite;
 }
 .ticker__item {
   font-family: var(--font-display);
   font-size: 15px;
   font-weight: 700;
-  color: var(--navy-dark);
+  color: var(--white);
+  letter-spacing: 0.5px;
+  padding: 0 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.ticker__item--loading {
+  color: rgba(255,255,255,0.4);
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  padding: 0 32px;
 }
-.ticker__item::after {
-  content: '◆';
-  margin-left: 32px;
-  opacity: 0.5;
+.ticker__stock { gap: 10px; }
+.ticker__stock::after {
+  content: '|';
+  margin-left: 16px;
+  opacity: 0.2;
+  font-weight: 300;
 }
+.ticker__symbol {
+  color: var(--gold);
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.ticker__price {
+  color: var(--white);
+  font-size: 15px;
+}
+.ticker__change {
+  font-size: 13px;
+  font-weight: 700;
+}
+.ticker__stock--up .ticker__change  { color: #4ade80; }
+.ticker__stock--down .ticker__change { color: #f87171; }
 @keyframes ticker {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
