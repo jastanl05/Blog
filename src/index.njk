@@ -55,8 +55,8 @@ description: Freshman Finance — practical money tips for college students and 
       <div class="section-head__eyebrow" style="color:var(--gold);justify-content:center;display:flex;gap:8px;margin-bottom:16px"><i class="fas fa-envelope"></i> Newsletter</div>
       <h2 class="section-head__title section-head__title--light" style="margin-bottom:14px">Money Tips.<br>Every Week.</h2>
       <p>No spam. Just one practical tip to grow your money, straight to your inbox.</p>
-      <form class="newsletter-form" id="newsletterForm">
-        <input type="email" placeholder="your@email.com" required />
+      <form class="newsletter-form" action="https://freshmanfinance.substack.com/api/v1/free" method="post" target="_blank">
+        <input type="email" name="email" placeholder="your@email.com" required />
         <button type="submit" class="btn btn--gold">Subscribe</button>
       </form>
     </div>
