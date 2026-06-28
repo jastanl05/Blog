@@ -49,10 +49,9 @@ const newsletterForm = document.getElementById('newsletterForm');
 if (newsletterForm) {
   newsletterForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    const email = this.querySelector('input[type="email"]').value;
-    if (email) {
-      this.innerHTML = '<p style="color:var(--gold-light);font-weight:700;font-size:18px;">✓ You\'re on the list! Check your inbox.</p>';
-    }
+    const email = document.getElementById('newsletterEmail')?.value || '';
+    const url = 'https://freshmanfinance.substack.com/subscribe' + (email ? '?email=' + encodeURIComponent(email) : '');
+    window.open(url, '_blank');
   });
 }
 
