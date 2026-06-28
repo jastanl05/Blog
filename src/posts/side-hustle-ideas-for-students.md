@@ -3,7 +3,6 @@ title: "Side Hustle Ideas for Students"
 date: 2026-01-01
 description: "Turn your skills into extra income without sacrificing your grades or your sanity."
 eleventyExcludeFromCollections: true
-permalink: false
 ---
 
 The best time to start a side hustle is in college — low overhead, flexible schedule, and you've got skills people will pay for.

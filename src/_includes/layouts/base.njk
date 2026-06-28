@@ -34,9 +34,9 @@
       </button>
       <ul class="nav__links" id="navLinks">
         <li><a href="/" class="nav__link {% if page.url == '/' %}nav__link--active{% endif %}">Home</a></li>
-        <li><a href="/blog/" class="nav__link {% if '/blog' in page.url %}nav__link--active{% endif %}">Articles</a></li>
-        <li><a href="/products/" class="nav__link {% if '/products' in page.url %}nav__link--active{% endif %}">Products</a></li>
-        <li><a href="/about/" class="nav__link {% if '/about' in page.url %}nav__link--active{% endif %}">About</a></li>
+        <li><a href="/blog/" class="nav__link {% if page.url and '/blog' in page.url %}nav__link--active{% endif %}">Articles</a></li>
+        <li><a href="/products/" class="nav__link {% if page.url and '/products' in page.url %}nav__link--active{% endif %}">Products</a></li>
+        <li><a href="/about/" class="nav__link {% if page.url and '/about' in page.url %}nav__link--active{% endif %}">About</a></li>
         <li><a href="/products/#consulting" class="nav__cta">Work With Me</a></li>
       </ul>
     </div>

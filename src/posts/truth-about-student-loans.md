@@ -3,7 +3,6 @@ title: "The Truth About Student Loans"
 date: 2026-01-15
 description: "Understanding how compound interest affects your debt over time — and what to do about it."
 eleventyExcludeFromCollections: true
-permalink: false
 ---
 
 Student loans are one of the most misunderstood financial tools in existence. You borrow money at 18, sign something, and don't think about it again until graduation.

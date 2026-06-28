@@ -3,7 +3,6 @@ title: "You're Ready to Start Investing… But Where Does Your Money Actually Go
 date: 2026-02-03
 description: "Understanding HSAs, 401(k)s, and IRAs: A simple priority order for getting started."
 eleventyExcludeFromCollections: true
-permalink: false
 ---
 
 You've decided to start investing. That's huge. Most people never even get this far.
