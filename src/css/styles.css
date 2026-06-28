@@ -623,6 +623,26 @@ a { color: inherit; text-decoration: none; }
   color: rgba(255,255,255,0.4);
 }
 
+/* ── COMING SOON ── */
+.coming-soon-box {
+  text-align: center;
+  padding: 64px 32px;
+  border: 2px dashed var(--gray-200);
+  border-radius: var(--radius-lg);
+  color: var(--gray-500);
+  margin: 40px 0;
+}
+.coming-soon-box i {
+  font-size: 32px;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: block;
+}
+.coming-soon-box p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
 /* ── CONSULTING SECTION ── */
 .consulting-section {
   padding: 96px 0;

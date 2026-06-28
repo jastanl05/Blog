@@ -60,21 +60,12 @@ if (newsletterForm) {
 const MAG7 = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'META', 'TSLA', 'NVDA'];
 
 async function fetchStockData() {
-  const symbols = MAG7.join(',');
-  const url = `https://query1.finance.yahoo.com/v7/finance/quote?symbols=${symbols}&fields=regularMarketPrice,regularMarketChange,regularMarketChangePercent`;
   try {
-    const res = await fetch(url);
+    const res = await fetch('/.netlify/functions/stocks');
     const json = await res.json();
     return json?.quoteResponse?.result || [];
   } catch {
-    try {
-      const proxy = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
-      const res2 = await fetch(proxy);
-      const json2 = await res2.json();
-      return json2?.quoteResponse?.result || [];
-    } catch {
-      return [];
-    }
+    return [];
   }
 }
 
