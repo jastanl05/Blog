@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+---
+
+<header class="post-hero">
+  <div class="container">
+    <div class="post-hero__meta">
+      <a href="/blog/" class="post-hero__back"><i class="fas fa-arrow-left"></i> All Articles</a>
+      <span class="post-hero__date">{{ date | readableDate }}</span>
+    </div>
+    <h1 class="post-hero__title">{{ title }}</h1>
+    {% if description %}
+    <p class="post-hero__subtitle">{{ description }}</p>
+    {% endif %}
+  </div>
+</header>
+
+<!-- Ad slot: below post header -->
+<div class="ad-slot ad-slot--banner container">
+  <!-- AdSense: Horizontal Banner -->
+  <!-- Replace with your ad unit code from Google AdSense dashboard -->
+  <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1626705266450923" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"></ins> -->
+</div>
+
+<article class="post-body container">
+  <div class="post-body__content">
+    {{ content | safe }}
+  </div>
+
+  <!-- Ad slot: mid-article -->
+  <div class="ad-slot ad-slot--inline">
+    <!-- AdSense: In-article Ad -->
+  </div>
+
+  <div class="post-body__cta">
+    <p>Found this useful?</p>
+    <div class="post-body__cta-actions">
+      <a href="/blog/" class="btn btn--outline">Read More Articles</a>
+      <a href="/products/#consulting" class="btn btn--gold">Book a Consulting Call</a>
+    </div>
+  </div>
+</article>
+
+<!-- Ad slot: below post -->
+<div class="ad-slot ad-slot--banner container">
+  <!-- AdSense: Horizontal Banner -->
+</div>

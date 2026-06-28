@@ -1,0 +1,31 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "src/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title",       name: "title",       widget: "string" }
+      - { label: "Date",        name: "date",        widget: "datetime" }
+      - { label: "Description", name: "description", widget: "string",   hint: "One-line summary shown in article cards" }
+      - { label: "Body",        name: "body",        widget: "markdown" }
+
+  - name: "products"
+    label: "Products"
+    folder: "src/products-items"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name",         name: "title",       widget: "string" }
+      - { label: "Type",         name: "type",        widget: "select", options: ["Digital Download", "Consulting"] }
+      - { label: "Price",        name: "price",       widget: "string",  hint: "e.g. $9" }
+      - { label: "Description",  name: "description", widget: "string" }
+      - { label: "Buy Link",     name: "link",        widget: "string",  hint: "Gumroad, Stripe, etc." }
+      - { label: "Body",         name: "body",        widget: "markdown", required: false }

@@ -1,0 +1,99 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#102280"/>
+      <stop offset="100%" stop-color="#050B30"/>
+    </linearGradient>
+
+    <!-- Gold for shield border -->
+    <linearGradient id="goldBorder" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#FFE566"/>
+      <stop offset="50%"  stop-color="#F5B800"/>
+      <stop offset="100%" stop-color="#C07D00"/>
+    </linearGradient>
+
+    <!-- Blue for FF letters -->
+    <linearGradient id="blueFF" x1="0%" y1="0%" x2="30%" y2="100%">
+      <stop offset="0%"   stop-color="#6AABFF"/>
+      <stop offset="100%" stop-color="#1A4AE0"/>
+    </linearGradient>
+
+    <!-- Glow behind FF -->
+    <radialGradient id="glow" cx="50%" cy="52%" r="36%">
+      <stop offset="0%"   stop-color="#1B4AE8" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#1B4AE8" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Shadow/depth filter -->
+    <filter id="shadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="glowFilter" x="-12%" y="-12%" width="124%" height="124%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ── BACKGROUND ── -->
+  <rect width="800" height="800" fill="url(#bg)"/>
+
+  <!-- Subtle radial light in center -->
+  <radialGradient id="centerLight" cx="50%" cy="45%" r="50%">
+    <stop offset="0%"   stop-color="#1A3A9F" stop-opacity="0.5"/>
+    <stop offset="100%" stop-color="#050B30" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="800" height="800" fill="url(#centerLight)"/>
+
+  <!-- ── SHIELD ── -->
+  <!-- Outer gold shield (drop shadow) -->
+  <path d="M 400,90
+           L 660,175
+           L 660,430
+           Q 660,590 400,710
+           Q 140,590 140,430
+           L 140,175
+           Z"
+        fill="url(#goldBorder)"
+        filter="url(#shadow)"/>
+
+  <!-- Inner dark fill (slightly inset) -->
+  <path d="M 400,114
+           L 636,193
+           L 636,428
+           Q 636,574 400,686
+           Q 164,574 164,428
+           L 164,193
+           Z"
+        fill="url(#bg)"/>
+
+  <!-- Second inner accent line (thin gold ring) -->
+  <path d="M 400,128
+           L 622,204
+           L 622,426
+           Q 622,564 400,672
+           Q 178,564 178,426
+           L 178,204
+           Z"
+        fill="none"
+        stroke="url(#goldBorder)"
+        stroke-width="2.5"
+        opacity="0.45"/>
+
+  <!-- ── GLOW BEHIND FF ── -->
+  <ellipse cx="400" cy="390" rx="200" ry="190" fill="url(#glow)"/>
+
+  <!-- ── FF MONOGRAM ── -->
+  <text x="400" y="490"
+        font-family="'Georgia','Times New Roman',serif"
+        font-weight="700"
+        font-size="310"
+        text-anchor="middle"
+        fill="url(#blueFF)"
+        letter-spacing="-14"
+        filter="url(#glowFilter)">FF</text>
+
+  <!-- ── THIN GOLD RULE BELOW FF ── -->
+  <rect x="240" y="510" width="320" height="5" rx="2.5" fill="url(#goldBorder)" opacity="0.7"/>
+
+</svg>

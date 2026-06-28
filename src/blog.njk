@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+title: Articles
+description: All personal finance articles from Freshman Finance — budgeting, investing, student loans, side hustles, and more.
+permalink: /blog/
+---
+
+<header class="page-hero">
+  <div class="container page-hero__inner">
+    <div class="section-head__eyebrow" style="color:var(--gold);display:inline-flex;gap:8px;margin-bottom:14px"><i class="fas fa-book-open"></i> Knowledge Base</div>
+    <h1 class="page-hero__title">All <span>Articles</span></h1>
+    <p class="page-hero__sub">Real talk about money, investing, and building a financial future from scratch.</p>
+  </div>
+</header>
+
+<section class="blog-section">
+  <div class="container">
+
+    <!-- Ad slot: top of blog page -->
+    <div class="ad-slot ad-slot--banner"></div>
+
+    <div class="blog-search">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="Search articles…" />
+    </div>
+
+    <div class="post-grid" id="postGrid">
+      {% for post in collections.posts %}
+      <div class="post-card-wrap reveal" style="transition-delay: {{ loop.index0 * 0.06 }}s">
+        <article class="post-card">
+          <div class="post-card__top">
+            <div class="post-card__date">{{ post.date | readableDate }}</div>
+            <h2 class="post-card__title">{{ post.data.title }}</h2>
+          </div>
+          <div class="post-card__body">
+            <p class="post-card__excerpt">{{ post.data.description or post.templateContent | striptags | truncate(130) }}</p>
+            <a href="{{ post.url }}" class="post-card__link">Read Article <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Ad slot: below article grid -->
+    <div class="ad-slot ad-slot--banner" style="margin-top:48px"></div>
+  </div>
+</section>

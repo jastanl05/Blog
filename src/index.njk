@@ -1,0 +1,170 @@
+---
+layout: layouts/base.njk
+title: Personal Finance for College Students
+description: Freshman Finance — practical money tips for college students and young adults. Learn budgeting, investing, and building wealth from day one.
+---
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__content">
+      <span class="hero__eyebrow">Personal Finance Education</span>
+      <h1 class="hero__title">
+        Learn Money.
+        <span>Build Wealth.</span>
+      </h1>
+      <p class="hero__subtitle">
+        Practical financial advice for college students and young adults — no jargon, no gatekeeping, just the stuff that actually matters.
+      </p>
+      <div class="hero__actions">
+        <a href="/blog/" class="btn btn--gold">Read Articles <i class="fas fa-arrow-right"></i></a>
+        <a href="/products/" class="btn btn--outline">Get the Guides</a>
+      </div>
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <div class="hero__stat-num">1K+</div>
+          <div class="hero__stat-label">Readers</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-num">{{ collections.posts | length }}</div>
+          <div class="hero__stat-label">Articles</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-num">100%</div>
+          <div class="hero__stat-label">Free</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__visual">
+      <div class="hero__card reveal">
+        <div class="hero__card-icon"><i class="fas fa-chart-line"></i></div>
+        <div class="hero__card-title">Start Investing Today</div>
+        <div class="hero__card-text">Even $50/month compounds into something real</div>
+      </div>
+      <div class="hero__card reveal" style="transition-delay:0.1s">
+        <div class="hero__card-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="hero__card-title">Student Loan Strategy</div>
+        <div class="hero__card-text">Know what you owe and how to beat it</div>
+      </div>
+      <div class="hero__card reveal" style="transition-delay:0.2s">
+        <div class="hero__card-icon"><i class="fas fa-piggy-bank"></i></div>
+        <div class="hero__card-title">Budget Like a Pro</div>
+        <div class="hero__card-text">Simple systems that actually stick</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TICKER ── -->
+<div class="ticker">
+  <div class="ticker__track">
+    <span class="ticker__item">Roth IRA</span>
+    <span class="ticker__item">Emergency Fund</span>
+    <span class="ticker__item">Credit Score</span>
+    <span class="ticker__item">Index Funds</span>
+    <span class="ticker__item">401k Match</span>
+    <span class="ticker__item">Compound Interest</span>
+    <span class="ticker__item">Budget</span>
+    <span class="ticker__item">Side Hustle</span>
+    <span class="ticker__item">HSA</span>
+    <span class="ticker__item">Debt Payoff</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="ticker__item">Roth IRA</span>
+    <span class="ticker__item">Emergency Fund</span>
+    <span class="ticker__item">Credit Score</span>
+    <span class="ticker__item">Index Funds</span>
+    <span class="ticker__item">401k Match</span>
+    <span class="ticker__item">Compound Interest</span>
+    <span class="ticker__item">Budget</span>
+    <span class="ticker__item">Side Hustle</span>
+    <span class="ticker__item">HSA</span>
+    <span class="ticker__item">Debt Payoff</span>
+  </div>
+</div>
+
+<!-- ── LATEST ARTICLES ── -->
+<section class="articles-section">
+  <div class="container">
+    <div class="section-head section-head--row reveal">
+      <div>
+        <div class="section-head__eyebrow"><i class="fas fa-bolt"></i> Latest</div>
+        <h2 class="section-head__title">Fresh Articles</h2>
+        <span class="section-head__line"></span>
+      </div>
+      <a href="/blog/" class="btn btn--outline">View All <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <!-- Ad slot: above article grid -->
+    <div class="ad-slot ad-slot--banner"></div>
+
+    <div class="post-grid">
+      {% for post in collections.posts | slice(0, 3) %}
+      <div class="post-card-wrap reveal" style="transition-delay: {{ loop.index0 * 0.08 }}s">
+        <article class="post-card">
+          <div class="post-card__top">
+            <div class="post-card__date">{{ post.date | readableDate }}</div>
+            <h3 class="post-card__title">{{ post.data.title }}</h3>
+          </div>
+          <div class="post-card__body">
+            <p class="post-card__excerpt">{{ post.data.description or post.templateContent | striptags | truncate(120) }}</p>
+            <a href="{{ post.url }}" class="post-card__link">Read Article <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── PRODUCTS PREVIEW ── -->
+<section class="products-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-head__eyebrow" style="color:var(--gold)"><i class="fas fa-star"></i> Resources</div>
+      <h2 class="section-head__title section-head__title--light">Level Up Faster</h2>
+      <span class="section-head__line"></span>
+      <p class="section-head__sub" style="color:rgba(255,255,255,0.5)">Tools and guides built for where you are right now.</p>
+    </div>
+    <div class="product-grid">
+      <div class="product-card reveal">
+        <div class="product-card__type">Digital Download</div>
+        <div class="product-card__icon">📊</div>
+        <h3 class="product-card__title">Ultimate Budget Template</h3>
+        <p class="product-card__desc">A plug-and-play spreadsheet built for students — track income, expenses, and savings goals automatically.</p>
+        <div class="product-card__price">$9 <span>one-time</span></div>
+        <a href="/products/" class="btn btn--gold">Get It Now</a>
+      </div>
+      <div class="product-card reveal" style="transition-delay:0.1s">
+        <div class="product-card__type">Digital Download</div>
+        <div class="product-card__icon">📈</div>
+        <h3 class="product-card__title">Investing Starter Guide</h3>
+        <p class="product-card__desc">Everything you need to open and fund your first investment account — step by step, no experience required.</p>
+        <div class="product-card__price">$12 <span>one-time</span></div>
+        <a href="/products/" class="btn btn--gold">Get It Now</a>
+      </div>
+      <div class="product-card reveal" style="transition-delay:0.2s">
+        <div class="product-card__type">Consulting</div>
+        <div class="product-card__icon">🎯</div>
+        <h3 class="product-card__title">1-on-1 Finance Call</h3>
+        <p class="product-card__desc">30 minutes to tackle your specific situation — budgeting, debt, investing, or just figuring out where to start.</p>
+        <div class="product-card__price">$49 <span>/ session</span></div>
+        <a href="/products/#consulting" class="btn btn--outline">Book a Session</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NEWSLETTER ── -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-inner reveal">
+      <div class="section-head__eyebrow" style="color:var(--gold);justify-content:center;display:flex;gap:8px;margin-bottom:16px"><i class="fas fa-envelope"></i> Newsletter</div>
+      <h2 class="section-head__title section-head__title--light" style="margin-bottom:14px">Money Tips.<br>Every Week.</h2>
+      <p>No spam. Just one practical tip to grow your money, straight to your inbox.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="your@email.com" required />
+        <button type="submit" class="btn btn--gold">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>

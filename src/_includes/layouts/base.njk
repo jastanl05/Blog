@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ description or 'Freshman Finance — Personal finance tips for college students and young adults.' }}" />
+  <title>{% if title %}{{ title }} | Freshman Finance{% else %}Freshman Finance{% endif %}</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/styles.css" />
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1626705266450923" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">
+        <img src="/images/logo.png" alt="Freshman Finance" class="nav__logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+        <span class="nav__logo-text" style="display:none">Freshman Finance</span>
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="/" class="nav__link {% if page.url == '/' %}nav__link--active{% endif %}">Home</a></li>
+        <li><a href="/blog/" class="nav__link {% if '/blog' in page.url %}nav__link--active{% endif %}">Articles</a></li>
+        <li><a href="/products/" class="nav__link {% if '/products' in page.url %}nav__link--active{% endif %}">Products</a></li>
+        <li><a href="/about/" class="nav__link {% if '/about' in page.url %}nav__link--active{% endif %}">About</a></li>
+        <li><a href="/products/#consulting" class="nav__cta">Work With Me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── PAGE CONTENT ── -->
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__name">Freshman Finance</span>
+        <p class="footer__tagline">Learn today. Build tomorrow.</p>
+      </div>
+      <div class="footer__links">
+        <a href="/" class="footer__link">Home</a>
+        <a href="/blog/" class="footer__link">Articles</a>
+        <a href="/products/" class="footer__link">Products</a>
+        <a href="/about/" class="footer__link">About</a>
+      </div>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/freshmanfinance_/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@freshmanfinance_" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.youtube.com/@freshmanfinanc_e" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© {{ page.date.getFullYear() if page.date else '2026' }} Freshman Finance. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
